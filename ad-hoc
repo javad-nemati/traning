@@ -1,0 +1,20 @@
+ansible all -m user -a "name="j.nemati""
+ansible all --list
+
+ansible -i ../hosts all --list
+
+
+ansible all -m command -a "id j.nemati"
+
+ ansible all -m ping
+
+ansible all -m raw -a "id j.nemati" ------> run command without installed python in target hosts
+
+
+ansible all -m service -a "name=sshd state=started"
+
+
+ansible all -m copy -a 'content="hello world" dest=/home/ansible/hello-ansible.txt'
+
+
+ansible all -m shell -a "cat /home/ansible/hello-ansible.txt"
